@@ -71,6 +71,30 @@ We change the code of the body to meet this coded description:
                 
                 // MARK:    - FOOTER
                 
+                // We use this code to create two circles with an icon in the middle. 
+                
+                     HStack {
+                        ZStack{
+                            Circle()
+                                .fill(Color("ColorRed"))
+                            Circle()
+                                .fill(.black.opacity(0.15))
+                                .padding(8)
+                            Image(systemName: "chevron.right.2")
+                                .font(.system(size: 24, weight: .bold))
+                            
+                        } // ZStack end.  Note modifiers
+                        .foregroundColor(.white)
+                    .frame(width: 80, height: 80, alignment: .center)
+                        // This spacer moves the "icon circles" to the left and prepares this arrangement for a drag right like the original open iPhone slider.
+                        Spacer()
+                        
+                    } //: HStack end
+                    
+                } //: FOOTER end
+                .frame(height: 80, alignment: .center)
+                .padding()
+                
             } //: VSTACK END
         }   //: ZSTACK
     

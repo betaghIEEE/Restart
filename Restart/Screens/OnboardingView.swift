@@ -59,8 +59,54 @@ struct OnboardingView: View {
                 // MARK:    - FOOTER
                 
                 ZStack{
+                    // Parts of the Custom button
+                    
+                    // 1. Background (Static)
+                    
+                    Capsule()
+                        .fill(Color.white.opacity(0.2))
+                    
+                    Capsule()
+                        .fill(Color.white.opacity(0.2))
+                        .padding(8)
+                    
+                    // 2. Call-to-action (Static)
+                    
+                    
+                    
+                    // 3. Capsule (Dynamic Width)
+                    
+                    HStack{
+                        Capsule()
+                            .fill(Color("ColorRed"))
+                            .frame(width:80)
+                        Spacer()
+                        
+                    } //: HStack end
+                    
+                    // 4. Circle (draggable)
+                    
+                    HStack {
+                        ZStack{
+                            Circle()
+                                .fill(Color("ColorRed"))
+                            Circle()
+                                .fill(.black.opacity(0.15))
+                                .padding(8)
+                            Image(systemName: "chevron.right.2")
+                                .font(.system(size: 24, weight: .bold))
+                            
+                        } // ZStack end.  Note modifiers
+                        .foregroundColor(.white)
+                    .frame(width: 80, height: 80, alignment: .center)
+                        // This spacer moves the "icon circles" to the left and prepares this arrangement for a drag right like the original open iPhone slider.
+                        Spacer()
+                        
+                    } //: HStack end
                     
                 } //: FOOTER end
+                .frame(height: 80, alignment: .center)
+                .padding()
                 
                 
             } //: VSTACK END
