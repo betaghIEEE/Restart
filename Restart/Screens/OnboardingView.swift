@@ -17,6 +17,8 @@ struct OnboardingView: View {
     
     private var buttonSize: CGFloat = 80
     
+    @State private var isAnimating: Bool = false
+    
     //  MARK: - Body
     var body: some View {
         ZStack {
@@ -42,6 +44,10 @@ struct OnboardingView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 10)
                 }   //: HEADER End
+                .opacity(isAnimating ? 1 : 0)  // We make header transparent if an animation is going on.
+                .offset(y: isAnimating ? 0 : -40)
+                .animation(.easeOut(duration: 1), value: isAnimating)
+                
                 
                 // MARK:    - CENTER
                 
@@ -84,7 +90,7 @@ struct OnboardingView: View {
                     HStack{
                         Capsule()
                             .fill(Color("ColorRed"))
-                            .frame(width:buttonSize)
+                            .frame(width:buttonOffset + buttonSize)
                         Spacer()
                         
                     } //: HStack end
@@ -123,7 +129,7 @@ struct OnboardingView: View {
                                         // Change screen to Home view
                                         isOnboardingViewActive = false
                                         // Oh, set button Offset to zero
-                                        buttonOffset = 0
+                                        buttonOffset = buttonWidth - buttonSize
                                     }
                                     
                                     
@@ -140,9 +146,11 @@ struct OnboardingView: View {
                 .frame(width:buttonWidth, height: buttonSize, alignment: .center)
                 .padding()
                 
-                
             } //: VSTACK END
         }   //: ZSTACK
+        .onAppear(perform: {
+            isAnimating = true
+        })
     }
 }
 

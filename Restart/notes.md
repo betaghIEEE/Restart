@@ -137,3 +137,11 @@ I added a drag gesture to the end of the draggable circle's ZStack (replacing th
 The drag gesture needs more configuration to work properly.  Therefore, we further define what Drag Gesture properties we need.  For example, onchanged.  This we define with a closure with the variable/argument gesture.  This allows us to capture information from the OS on what the drag gesture is occurring.
 
 
+## Add animations part 1
+In this section, I established whether an animation is to occur and how it does.
+
+I added action for the onAppear observer for the big vStack (root of the body, bottom). The observer onAppear that takes a closure as its argument, named perform. Thus, when OnBoarding' onAppear observer fires the perform closure and sets isAnimating to true.  
+The next change is made at the end of the header's VStack.  I added settings for offset, opacity, and animation that depend on the isAnimating property.  If isAnimating is true then we make the header's vStack transparent, change its offset to -40, and start the easeOut animation.
+Reference: SwiftUI Annimation Part 1 (Lesson 22, part of section 2)
+The author makes reference to some Swift constructs in this code.  In particular, the isAnimating is used to set parameter sent to the offset and opacity properties of the onBoarding struct/ View.
+
