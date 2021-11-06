@@ -104,3 +104,12 @@ We change the code of the body to meet this coded description:
 ##  Efforts on the Home Screen
 
 
+            *   There is an issue addressed in the footer pertaining to the Accent Color.
+            *   Apple typically manages the Accent Color as part of a release scheme, and this is part of the system.  Thereofore, Apple can change this at any time.
+            *   Developers can set the Accent Color in the app's Asset Catalog, therefore assuming some measure of control for the application.
+The home screen should have a nice character icon to indicate the purpose of the app and user actions that it is "assisting" with.
+            
+So now we have added button styles and work in the footer.  The next part is reuseable components. 
+So, note this in version control so we can follow what parts go where.
+
+
