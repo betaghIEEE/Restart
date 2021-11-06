@@ -29,19 +29,50 @@ This part of the project restructures the code to run correctly in the simulator
 ##  Efforts on the Onboarding Screen
 First efforts produce a Vertical Stack:
 
-    var body: some View {
-        VStack(spacing: 20) {
-            Text("Onboarding")
-                .font(.largeTitle)
+We change the code of the body to meet this coded description:
+
+        ZStack {
+            Color("ColorBlue")
+                .ignoresSafeArea(.all, edges: .all)
             
-            Button(action: {
-                isOnboardingViewActive = false 
-            }) {
-                Text("Start")
-            }
-            
-        } //: VSTACK END
-    }
+            VStack(spacing: 20) {
+                // MARK:    - HEADER
+                
+                Spacer()
+                VStack(spacing: 0){
+                    Text("Share.")
+                        .font(.system(size: 60))
+                        .fontWeight(.heavy)
+                        .foregroundColor(.white)
+                    Text("""
+                    It's not how much we give but
+                    how much love we put into giving.
+                    """)
+                        .font(.title3)
+                        .fontWeight(.light)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 10)
+                }   //: HEADER End
+                
+                // MARK:    - CENTER
+                
+                ZStack{
+                    ZStack{
+                        Circle()
+                            .stroke(.white.opacity(0.2), lineWidth: 40)
+                            .frame(width: 260, height: 260, alignment: .center)
+                        
+                    } //: Inner ZStack
+                    
+                } //: CENTER
+                Spacer()
+                
+                
+                // MARK:    - FOOTER
+                
+            } //: VSTACK END
+        }   //: ZSTACK
     
     
 
