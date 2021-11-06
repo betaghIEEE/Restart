@@ -145,6 +145,9 @@ struct OnboardingView: View {
                 } //: FOOTER end
                 .frame(width:buttonWidth, height: buttonSize, alignment: .center)
                 .padding()
+                .opacity(isAnimating ? 1 : 0)  // We make footer transparent if an animation is going on.
+                .offset(y: isAnimating ? 0 : +40)
+                .animation(.easeOut(duration: 1), value: isAnimating)
                 
             } //: VSTACK END
         }   //: ZSTACK

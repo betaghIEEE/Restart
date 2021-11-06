@@ -145,3 +145,5 @@ The next change is made at the end of the header's VStack.  I added settings for
 Reference: SwiftUI Annimation Part 1 (Lesson 22, part of section 2)
 The author makes reference to some Swift constructs in this code.  In particular, the isAnimating is used to set parameter sent to the offset and opacity properties of the onBoarding struct/ View.
 
+Okay, the first part of the animations seem to roll down the header pieces in 1 second.  The ease out seems to be directed down.  I think that is the offset and changes from the isAnimating flag flipping. 
+Here we also apply a similar set of annimations to the footer.   This should make the application start without some sweet header and without the footer's slider button. 
