@@ -113,3 +113,27 @@ So now we have added button styles and work in the footer.  The next part is reu
 So, note this in version control so we can follow what parts go where.
 
 
+## The Onboarding View's Swipe Right Slider Button
+The basics of a slider button is that it is a gesture that is hard to do by accident.  This is why it was used as the unlock gesture for the iPhone initially.  
+The Human Interfaces gurus came back to Steve (and probably Steve himself also) with many ideas.  The ideas focused on how to prevent the iPhone from turning its GUI on accidently.  Why?  They assessed how people treated their "dumb" cellular phones.  People put their phones in their pockets,  cleverly crafted holster attached to their belt, or purses.  In any case, they asked if thing jingling next to the phone could turn it on?  Could fingers reaching for and picking the phone up (and out of its stored place) wake up its GUI?  Bottom line, Steve wanted operation of the iPhone to be an intentional act.   He wanted to restrict involuntary, clumsy, and inadvertant actions to the realm of non-consequence. 
+So, we build such a slider button for our app as this method has been proven.  It is proven to users and they instinctively know what it is.  They know how to use it.  They know what is likely to happen when they use it.  So, here we go.
+ 
+The desired features on the Slider Button is as follows:
+    1.  Drag gesture
+        *   The user should be able to touch the slider's button on the left side of the oval container.  This initiates the slide movement.
+    2.  Deformable shape
+        *   During the slide to the right the one of the ovals deforms and gives the impression that a "sliding door" is moving with the button's circle.
+    3.  Snappy Feature 
+        *   If the button's circle makes it only half way to the right and is release, then the button snaps back to the beginning.
+    4.  Screen Change
+        *   If the button makes it farther than half way, then the screen change state occurs.
+        
+Question of note:  why wouldn't we make such a slider a reuseable component?  
+
+We need two new properties in the onboarding view structure.
+
+I added some pieces to the circle description in the body.  I added framewidth to the footer and offset to the ZStack containing the draggable circles.
+I added a drag gesture to the end of the draggable circle's ZStack (replacing the tap action.)
+The drag gesture needs more configuration to work properly.  Therefore, we further define what Drag Gesture properties we need.  For example, onchanged.  This we define with a closure with the variable/argument gesture.  This allows us to capture information from the OS on what the drag gesture is occurring.
+
+

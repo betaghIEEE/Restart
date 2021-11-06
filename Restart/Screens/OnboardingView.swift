@@ -11,6 +11,12 @@ struct OnboardingView: View {
     //  MARK:   - Property
     @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
     
+    @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
+    
+    @State private var buttonOffset: CGFloat = 0
+    
+    private var buttonSize: CGFloat = 80
+    
     //  MARK: - Body
     var body: some View {
         ZStack {
@@ -78,7 +84,7 @@ struct OnboardingView: View {
                     HStack{
                         Capsule()
                             .fill(Color("ColorRed"))
-                            .frame(width:80)
+                            .frame(width:buttonSize)
                         Spacer()
                         
                     } //: HStack end
@@ -97,18 +103,42 @@ struct OnboardingView: View {
                             
                         } // ZStack end.  Note modifiers
                         .foregroundColor(.white)
-                    .frame(width: 80, height: 80, alignment: .center)
+                        .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                        .offset(x: buttonOffset)
+                        .gesture(
+                            DragGesture()
+                                .onChanged{ gesture in
+                                    if gesture.translation.width > 0 && buttonOffset <= buttonWidth - buttonSize {
+                                        buttonOffset = gesture.translation.width
+                                    }
+                                    
+                                }
+                                .onEnded{ gester in
+                                    
+                                    //buttonOffset = 0
+                                    
+                                    if gester.translation.width <= (buttonWidth / 2) {
+                                        buttonOffset = 0
+                                    } else if  gester.translation.width > (buttonWidth / 2) {
+                                        // Change screen to Home view
+                                        isOnboardingViewActive = false
+                                        // Oh, set button Offset to zero
+                                        buttonOffset = 0
+                                    }
+                                    
+                                    
+                                }
+                        ) //: GESTURE  
+                  
+                        
                         // This spacer moves the "icon circles" to the left and prepares this arrangement for a drag right like the original open iPhone slider.
                         Spacer()
                         
-                    } //: HStack end
+                    } //: HStack end  Circle collection
                     
                 } //: FOOTER end
-                .frame(height: 80, alignment: .center)
+                .frame(width:buttonWidth, height: buttonSize, alignment: .center)
                 .padding()
-                .onTapGesture{
-                    isOnboardingViewActive = false 
-                }
                 
                 
             } //: VSTACK END
