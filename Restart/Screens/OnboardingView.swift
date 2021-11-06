@@ -72,6 +72,11 @@ struct OnboardingView: View {
                     
                     // 2. Call-to-action (Static)
                     
+                    Text("Get Started.")
+                        .font(.system(.title3, design: .rounded ))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .offset(x: 20)
                     
                     
                     // 3. Capsule (Dynamic Width)
