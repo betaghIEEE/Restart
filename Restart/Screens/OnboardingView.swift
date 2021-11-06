@@ -112,6 +112,9 @@ struct OnboardingView: View {
                 } //: FOOTER end
                 .frame(height: 80, alignment: .center)
                 .padding()
+                .onTapGesture{
+                    isOnboardingViewActive = false 
+                }
                 
                 
             } //: VSTACK END
