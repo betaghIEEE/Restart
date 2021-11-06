@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2779D8E427362BF100DBDC44 /* CircleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779D8E327362BF100DBDC44 /* CircleGroupView.swift */; };
 		27CFC98B2734E2B6002F3412 /* RestartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CFC98A2734E2B6002F3412 /* RestartApp.swift */; };
 		27CFC98D2734E2B6002F3412 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CFC98C2734E2B6002F3412 /* ContentView.swift */; };
 		27CFC98F2734E2B8002F3412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27CFC98E2734E2B8002F3412 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		2779D8E22735F05200DBDC44 /* notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = notes.md; sourceTree = "<group>"; };
+		2779D8E327362BF100DBDC44 /* CircleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGroupView.swift; sourceTree = "<group>"; };
 		27CFC9872734E2B6002F3412 /* Restart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CFC98A2734E2B6002F3412 /* RestartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartApp.swift; sourceTree = "<group>"; };
 		27CFC98C2734E2B6002F3412 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		27CFC99E2734E7AA002F3412 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2779D8E327362BF100DBDC44 /* CircleGroupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2779D8E427362BF100DBDC44 /* CircleGroupView.swift in Sources */,
 				27CFC9A22734EC3B002F3412 /* OnboardingView.swift in Sources */,
 				27CFC9A42734EC5C002F3412 /* HomeView.swift in Sources */,
 				27CFC98D2734E2B6002F3412 /* ContentView.swift in Sources */,
