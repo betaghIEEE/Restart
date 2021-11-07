@@ -120,17 +120,18 @@ struct OnboardingView: View {
                                     
                                 }
                                 .onEnded{ gester in
-                                    
-                                    //buttonOffset = 0
-                                    
-                                    if gester.translation.width <= (buttonWidth / 2) {
-                                        buttonOffset = 0
-                                    } else if  gester.translation.width > (buttonWidth / 2) {
-                                        // Change screen to Home view
-                                        isOnboardingViewActive = false
-                                        // Oh, set button Offset to zero
-                                        buttonOffset = buttonWidth - buttonSize
+                                    withAnimation(Animation.easeOut(duration: 0.8) ){
+                                        if gester.translation.width <= (buttonWidth / 2) {
+                                            buttonOffset = 0
+                                        } else if  gester.translation.width > (buttonWidth / 2) {
+                                            // Change screen to Home view
+                                            isOnboardingViewActive = false
+                                            // Oh, set button Offset to zero
+                                            buttonOffset = buttonWidth - buttonSize
+                                        }
                                     }
+                                    
+                                    
                                     
                                     
                                 }
