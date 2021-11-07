@@ -58,7 +58,9 @@ struct HomeView: View {
             
             
             Button(action: {
-                isOnboardingViewActive = true
+                withAnimation {
+                    isOnboardingViewActive = true
+                }
             }) {
                 // We need some system images to give this button just the right "touch"
                 // The real question is, how do we find out what System images are there?   It there method to this madness to allow even a mediocre artist and half way decent software engineer apply these things so we come out all right by the customers.
