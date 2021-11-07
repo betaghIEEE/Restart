@@ -13,6 +13,8 @@ struct HomeView: View {
     //  MARK:   - Property
     @AppStorage("onboarding") var isOnboardingViewActive: Bool = false
     
+    @State private var isAnimating: Bool = false
+    
     //  MARK: - Body
     var body: some View {
         VStack(spacing: 20) {
@@ -25,7 +27,14 @@ struct HomeView: View {
                 Image("character-2")
                     .resizable()
                     .scaledToFit()
-                .padding()
+                    .padding()
+                    .offset(y: isAnimating ? 35 : -35)
+                    .animation(
+                        Animation
+                            .easeOut(duration: 4)
+                            .repeatForever()
+                               , value: isAnimating
+                    )
             }   //: ZStack end for the Character image
             
             // MARK:    -   CENTER
@@ -72,6 +81,11 @@ struct HomeView: View {
             .controlSize(.large)
             
         } //: VSTACK END
+        .onAppear(perform: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                isAnimating = true 
+            })
+        })
     }
 }
 

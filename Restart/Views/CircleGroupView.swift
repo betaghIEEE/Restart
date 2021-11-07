@@ -32,9 +32,9 @@ struct CircleGroupView: View {
             .blur(radius: isAnimating ? 0 : 10)
             .opacity(isAnimating ? 1 : 0)
             .scaleEffect(isAnimating ? 1 : 0.5)
-            .animation(.easeOut(duration: 6) , value: isAnimating)
+            .animation(.easeOut(duration: 1.25) , value: isAnimating)
             .onAppear(perform: {
-                isAnimating = true 
+                isAnimating = true
             })
     }
 }

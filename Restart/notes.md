@@ -146,4 +146,11 @@ Reference: SwiftUI Annimation Part 1 (Lesson 22, part of section 2)
 The author makes reference to some Swift constructs in this code.  In particular, the isAnimating is used to set parameter sent to the offset and opacity properties of the onBoarding struct/ View.
 
 Okay, the first part of the animations seem to roll down the header pieces in 1 second.  The ease out seems to be directed down.  I think that is the offset and changes from the isAnimating flag flipping. 
-Here we also apply a similar set of annimations to the footer.   This should make the application start without some sweet header and without the footer's slider button. 
+Here we also apply a similar set of annimations to the footer.   This should make the application start without some sweet header and without the footer's slider button.
+
+The instructor recommends using the Dispatch Queue to make onAppear observer response start animating the Home screen view.  
+The Dispatch Queue is provided by Apple, and has been since XGrid and macOS Leopard.  The Dispatch Queue is an object that manages the execution of tasks serially or concurrently on your app's main thread or on a background thread.
+The instructor says that because we want the home view's animation to be slightly delayed, we have to use the main thread on the dispatch queue to ensure the right timing.
+The executing task asynchronously (third message in the observer response instruction) provides instruction on when to establish the animation.  Once this setting is made, the animation tasks start.
+ 
+ 
