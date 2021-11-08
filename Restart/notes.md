@@ -153,4 +153,16 @@ The Dispatch Queue is provided by Apple, and has been since XGrid and macOS Leop
 The instructor says that because we want the home view's animation to be slightly delayed, we have to use the main thread on the dispatch queue to ensure the right timing.
 The executing task asynchronously (third message in the observer response instruction) provides instruction on when to establish the animation.  Once this setting is made, the animation tasks start.
  
+ ## The next Drag Gesture to be added
+ This segment of training shows how to add drag gesture capability to a character image inside one of the views.  In this case, we make a drag gesture in the onboarding view to make the heart carrying dude move a bit.
+ 
+ The following adjustments are to be made:
+    1.  Drag Gesture
+    2.  Movement with Rotation
+    3.  Horizontal Parallax Effect
+    4.  Arrow indicator
+    5.  Opacity Transition
+    
+These ideas is to give an illusion of view port changing by blurring parts of the graphic and its animation.  
+    
  
