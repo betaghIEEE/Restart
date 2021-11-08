@@ -177,10 +177,13 @@ struct OnboardingView: View {
                                         if gester.translation.width <= (buttonWidth / 2) {
                                             buttonOffset = 0
                                         } else if  gester.translation.width > (buttonWidth / 2) {
+                                            playSound(sound: "chimeup", type: "mp3")
                                             // Change screen to Home view
                                             isOnboardingViewActive = false
                                             // Oh, set button Offset to zero
                                             buttonOffset = buttonWidth - buttonSize
+                                            
+                                            
                                         }
                                     }
                                     
