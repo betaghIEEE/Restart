@@ -165,4 +165,18 @@ The executing task asynchronously (third message in the observer response instru
     
 These ideas is to give an illusion of view port changing by blurring parts of the graphic and its animation.  
     
+ ## Final Touches
+ The instructor thinks there are some final touches to make the app prettier.  For example:
  
+ 1. Preferred Color Scheme
+ 2. Playing with Sound Effects 
+ 3. Haptic Feedbacks.  
+ 
+ You can use the authors contributions in the editor options to look back when each part was added and what difference it made.
+
+### Apply AV Foundation
+We can apply sound effects by making an utility module.  
+The AV Foundation has been here for some time, at least in Objective C.  Swift inherits this on Apple products.  I can't speak to Linux distribution under Swift Objects.
+
+AV Foundation is a full-featured framework for working with time-based audiovisual media on Apple platforms (iOS, macOS, watchOS, and tvOS).  
+We can easily play, create, and edit movies, sound files, and build powerful media functionality into any apps using this framework. 
