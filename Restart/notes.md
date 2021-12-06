@@ -180,3 +180,6 @@ The AV Foundation has been here for some time, at least in Objective C.  Swift i
 
 AV Foundation is a full-featured framework for working with time-based audiovisual media on Apple platforms (iOS, macOS, watchOS, and tvOS).  
 We can easily play, create, and edit movies, sound files, and build powerful media functionality into any apps using this framework. 
+
+
+### Haptics engages people's sense of touch to enhance the experience of interacting with onscreen interfaces.  We can play various types of haptics in addition to visual and auditory feedback to enhance touch gestures or toggling a switch.  We can also use it to highlight, deny, or confirm any other user actions.

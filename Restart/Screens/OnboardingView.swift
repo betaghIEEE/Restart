@@ -25,6 +25,8 @@ struct OnboardingView: View {
     
     @State private var textTitle: String = "Share."
     
+    let hapticFeedback = UINotificationFeedbackGenerator()
+    
     //  MARK: - Body
     var body: some View {
         ZStack {
@@ -176,7 +178,9 @@ struct OnboardingView: View {
                                     withAnimation(Animation.easeOut(duration: 0.8) ){
                                         if gester.translation.width <= (buttonWidth / 2) {
                                             buttonOffset = 0
+                                            hapticFeedback.notificationOccurred(.warning)
                                         } else if  gester.translation.width > (buttonWidth / 2) {
+                                            hapticFeedback.notificationOccurred(.success)
                                             playSound(sound: "chimeup", type: "mp3")
                                             // Change screen to Home view
                                             isOnboardingViewActive = false
